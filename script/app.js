@@ -89,18 +89,40 @@ function Createio(parentId) {
     var parent = document.getElementById(parentId);
 
     //本体
-    var ioWrapepr = document.createElement("div");
-    ioWrapepr.classList.add("ioWrapper");
+    var ioWrapper;
+    if(document.getElementById(`${parentId}ioWrapper`) == null){
+        ioWrapper = document.createElement("div");
+        ioWrapper.classList.add("ioWrapper");
+        ioWrapper.id = `${parentId}ioWrapper`;
 
+        parent.appendChild(ioWrapper);
+
+        ioremove = document.createElement("button");
+        ioremove.textContent = "X";
+        ioremove.classList.add("ioContent",`${parentId}`);
+        ioremove.onclick = function(){
+            if(ioWrapper.childNodes[1]){
+                ioWrapper.childNodes[1].remove();
+            }else{
+                ioWrapper.childNodes[0].remove();
+                ioWrapper.remove();
+            }
+        }
+
+        ioWrapper.appendChild(ioremove);
+    }else{
+        ioWrapper = document.getElementById(`${parentId}ioWrapper`);
+    }
+    
 
     
     //ボタン
     var io = document.createElement("input");
     io.type = "checkbox";
-    io.classList.add("ioCWrapper",`${parentId}`);
+    io.classList.add("ioContent",`${parentId}`);
 
     //小要素を親要素に追加
-    parent.appendChild(io);
+    ioWrapper.appendChild(io);
 }
  
 /**************************************************
