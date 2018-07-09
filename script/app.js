@@ -33,7 +33,7 @@ function decrement(out){
 // コインカウンターを追加するメソッド
 function CreateCC(parentId){
     //まだ存在しない場合
-    if(document.getElementById(`${parentId}_CC`) == null){
+    //if(document.getElementById(`${parentId}_CC`) == null){
         var parent = document.getElementById(parentId);
 
         // 本体
@@ -79,7 +79,7 @@ function CreateCC(parentId){
         CCWrapper.appendChild(plusButton);
         CCWrapper.appendChild(minusButton);
         CCWrapper.appendChild(removeButton);
-    }
+    //}
 }
 
 /**************************************************
