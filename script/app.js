@@ -28,24 +28,24 @@ function decrement(out){
     document.getElementById(out).textContent--;
 }
 
-
+var NCNum = 0;//カウンターの数のカウント
 
 // コインカウンターを追加するメソッド
-function CreateCC(parentId){
+function CreateNC(parentId){
     //まだ存在しない場合
-    //if(document.getElementById(`${parentId}_CC`) == null){
+    //if(document.getElementById(`${parentId}_NC`) == null){
         var parent = document.getElementById(parentId);
 
         // 本体
-        var CCWrapper = document.createElement("div");
-        CCWrapper.classList.add(`CCWrapper`,`${parentId}`);
-        CCWrapper.id = `${parentId}_CC`;
-        parent.appendChild(CCWrapper);
+        var NCWrapper = document.createElement("div");
+        NCWrapper.classList.add(`NCWrapper`,`${parentId}`);
+        NCWrapper.id = `${parentId}_NC$`;
+        parent.appendChild(NCWrapper);
         
         // 値表示部
         var counter = document.createElement("div");
-        counter.classList.add(`${parentId}_CC`);
-        counter.id = `${parentId}CC_out`;
+        counter.classList.add(`${parentId}_NC`);
+        counter.id = `${parentId}NC_out`;
         counter.textContent = "0";
                 
         
@@ -53,14 +53,14 @@ function CreateCC(parentId){
         var plusButton = document.createElement("button");
             plusButton.textContent = "＋";
             plusButton.onclick = function(){
-            increment(`${parentId}CC_out`);
+            increment(`${parentId}NC_out`);
         };
     
         // -ボタン
         var minusButton = document.createElement("button");
         minusButton.textContent = "－";
         minusButton.onclick = function(){
-            decrement(`${parentId}CC_out`);
+            decrement(`${parentId}NC_out`);
         };
 
         // 削除ボタン
@@ -70,15 +70,15 @@ function CreateCC(parentId){
             minusButton.remove();
             plusButton.remove();
             counter.remove();
-            CCWrapper.remove();
+            NCWrapper.remove();
             this.remove();
         }
                 
         //下につける
-        CCWrapper.appendChild(counter);
-        CCWrapper.appendChild(plusButton);
-        CCWrapper.appendChild(minusButton);
-        CCWrapper.appendChild(removeButton);
+        NCWrapper.appendChild(counter);
+        NCWrapper.appendChild(plusButton);
+        NCWrapper.appendChild(minusButton);
+        NCWrapper.appendChild(removeButton);
     //}
 }
 
