@@ -1,5 +1,5 @@
 /**************************************************
-        コインカウンター
+        数字カウンター
 ***************************************************/
 function CoinCounter(out){
     // いじるタグ
@@ -30,9 +30,9 @@ function decrement(out){
 
 var NCNum = 0;//カウンターの数のカウント
 
-// コインカウンターを追加するメソッド
+// 数字カウンターを追加するメソッド
 function CreateNC(parentId){
-    //まだ存在しない場合
+    //一つだけ作れる
     //if(document.getElementById(`${parentId}_NC_${NCNum}`) == null){
         var parent = document.getElementById(parentId);
 
