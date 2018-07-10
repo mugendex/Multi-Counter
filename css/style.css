@@ -10,7 +10,7 @@
 /*ヘッダー*/
 .header{
     width: 100%;
-    height: 20%;
+    height: 10vh;
     font-size: 30px;
     font-family: serif;
     color: rgb(255, 0, 221);
@@ -19,10 +19,22 @@
 
 /*ラッパー*/
 .Wrapper{
+<<<<<<< HEAD
     width: 50%;
     height: 80%;
     display: inline-block;
 
+=======
+    display: inline-block;
+    height: 90vh;
+    width: calc( 98vw / 2 );
+    
+}
+
+#main_Area{
+    height: 90vh;
+    width: 100vw;
+>>>>>>> 56d1fe8858481df0159ae4bdd437ae0aa90070f6
 }
 
 .P1.btn{
