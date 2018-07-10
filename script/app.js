@@ -110,7 +110,7 @@ function Createio(parentId) {
             if(ioWrapper.childNodes[2]){ //削除ボタン以外の小要素が2つ以上の場合
                 ioWrapper.childNodes[1].remove();
             }else{
-                //ioカウンター削除
+                //全て削除
                 ioWrapper.childNodes[1].remove();
                 this.remove();
                 ioWrapper.remove();
@@ -164,17 +164,6 @@ var sum = function(arr){
         count++;
     }
     return sum;
-}
-
-generatePassword = function(){
-    var password = "";
-    var passwordLength = 8;
-    var word = "0123456789abcdefghijklmnopqrstuwxyz";
-    
-    for(var count = 0; count < passwordLength; count++){
-        password += word.substr(PlayDice(word.length),1);
-    }
-    return password;
 }
 
 
