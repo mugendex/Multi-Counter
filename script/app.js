@@ -125,9 +125,8 @@ function Createio(parentId) {
 
     
     //ボタン
-    var io = document.createElement("input");
-    io.type = "checkbox";
-    io.classList.add("ioContent","cBox",`${parentId}`);
+    var io = document.createElement("button");
+    io.classList.add("ioContent","btn",`${parentId}`);
 
     //小要素を親要素に追加
     ioWrapper.appendChild(io);
@@ -165,17 +164,5 @@ var sum = function(arr){
     }
     return sum;
 }
-
-generatePassword = function(){
-    var password = "";
-    var passwordLength = 8;
-    var word = "0123456789abcdefghijklmnopqrstuwxyz";
-    
-    for(var count = 0; count < passwordLength; count++){
-        password += word.substr(PlayDice(word.length),1);
-    }
-    return password;
-}
-
 
 

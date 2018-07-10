@@ -21,7 +21,8 @@
 .Wrapper{
     width: 50%;
     height: 80%;
-    float: left;
+    display: inline-block;
+
 }
 
 .P1.btn{
