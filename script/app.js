@@ -165,8 +165,4 @@ var sum = function(arr){
     return sum;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 56d1fe8858481df0159ae4bdd437ae0aa90070f6
 

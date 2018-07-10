@@ -19,12 +19,6 @@
 
 /*ラッパー*/
 .Wrapper{
-<<<<<<< HEAD
-    width: 50%;
-    height: 80%;
-    display: inline-block;
-
-=======
     display: inline-block;
     height: 90vh;
     width: calc( 98vw / 2 );
@@ -34,7 +28,6 @@
 #main_Area{
     height: 90vh;
     width: 100vw;
->>>>>>> 56d1fe8858481df0159ae4bdd437ae0aa90070f6
 }
 
 .P1.btn{
