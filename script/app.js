@@ -20,17 +20,9 @@ function CoinCounter(out){
     }
 }
 
-function increment(out){
-    document.getElementById(out).textContent++;
-}
-
-function decrement(out){
-    document.getElementById(out).textContent--;
-}
-
 var NCNum = 0;//カウンターの数のカウント
 
-// 数字カウンターを追加するメソッド
+// 数字カウンターを追加する
 const CreateNC = function(parentId){
     //一つだけ作れる
     //if(document.getElementById(`${parentId}_NC_${NCNum}`) == null){
@@ -47,7 +39,7 @@ const CreateNC = function(parentId){
         // 値表示部
         var counter = document.createElement("div");
         counter.classList.add("NCContent",`${parentId}_NC_${NCNum}`);
-        counter.id = `${parentId}NC_out${NCNum}`;
+        counter.id = `${parentId}_NC_out_${NCNum}`;
         counter.textContent = "0";
                 
         
@@ -90,15 +82,16 @@ const CreateNC = function(parentId){
 /**************************************************
         ioカウンター
 ***************************************************/
+//ioカウンタを作成
 const Createio = function(parentId) {
     var parent = document.getElementById(parentId);
 
     //本体
     var ioWrapper;
-    if(document.getElementById(`${parentId}ioWrapper`) == null){
+    if(document.getElementById(`${parentId}_ioWrapper`) == null){
         ioWrapper = document.createElement("div");
         ioWrapper.classList.add("ioWrapper",`${parentId}`);
-        ioWrapper.id = `${parentId}ioWrapper`;
+        ioWrapper.id = `${parentId}_ioWrapper`;
 
         parent.appendChild(ioWrapper);
         
@@ -119,7 +112,7 @@ const Createio = function(parentId) {
 
         ioWrapper.appendChild(ioremove);
     }else{
-        ioWrapper = document.getElementById(`${parentId}ioWrapper`);
+        ioWrapper = document.getElementById(`${parentId}_ioWrapper`);
     }
     
 
@@ -152,7 +145,9 @@ const Createio = function(parentId) {
         ダイス 
 ***************************************************/
 //diceMax面のダイスを振る
-const PlayDice = function(diceMax){ 
+const PlayDice = function(diceMax = 6){
+
+
     return Math.floor(Math.random() * diceMax + 1);
 }
 
@@ -172,17 +167,22 @@ const  DiceEx = function(diceCount,diceMax){
     return diceArrey;
 }
 
-const ArrSum = function(arr){
-    var sum = 0;
-    count = 0;
-    while(count < arr.length){
-        sum += arr[count];
-        count++;
-    }
-    return sum;
+/*--------------------------------
+    汎用関数
+------------------------------- */
+
+//値を1増やす
+function increment(out){
+    document.getElementById(out).textContent++;
 }
 
-const Arrsum = function(arr){
+//値を1減らす
+function decrement(out){
+    document.getElementById(out).textContent--;
+}
+
+//配列の合計を返す
+const ArrSum = function(arr){
     var sum = arr.reduce((a, b) => a + b);
     return sum;
 }
