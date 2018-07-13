@@ -13,8 +13,13 @@
     height: 10vh;
     font-size: 30px;
     font-family: serif;
-    color: rgb(255, 0, 221);
-    background-color: rgba(0, 255, 0, 0.221);
+    color: black;
+    background-color: white;
+    border-bottom: solid;
+    border-color: red;
+}
+.header span{
+    color: red;
 }
 
 /*ラッパー*/
@@ -28,8 +33,10 @@
 #main_Area{
     height: 90vh;
     width: 100vw;
-}
 
+    display: flex;
+    flex-wrap: wrap;
+}
 .P1.btn{
     background-color: gray;
 }

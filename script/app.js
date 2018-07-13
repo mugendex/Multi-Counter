@@ -31,7 +31,7 @@ function decrement(out){
 var NCNum = 0;//カウンターの数のカウント
 
 // 数字カウンターを追加するメソッド
-function CreateNC(parentId){
+const CreateNC = function(parentId){
     //一つだけ作れる
     //if(document.getElementById(`${parentId}_NC_${NCNum}`) == null){
         var parent = document.getElementById(parentId);
@@ -90,7 +90,7 @@ function CreateNC(parentId){
 /**************************************************
         ioカウンター
 ***************************************************/
-function Createio(parentId) {
+const Createio = function(parentId) {
     var parent = document.getElementById(parentId);
 
     //本体
@@ -104,7 +104,7 @@ function Createio(parentId) {
         
         //削除ボタン
         ioremove = document.createElement("button");
-        ioremove.textContent = "X";
+        ioremove.textContent = "✕";
         ioremove.classList.add("ioContent","btn",`${parentId}`);
         ioremove.onclick = function(){
             if(ioWrapper.childNodes[2]){ //削除ボタン以外の小要素が2つ以上の場合
@@ -127,6 +127,22 @@ function Createio(parentId) {
     //ボタン
     var io = document.createElement("button");
     io.classList.add("ioContent","btn",`${parentId}`);
+    io.textContent = "　";
+    io.flag = false;
+    io.onclick = function(){
+        if(io.flag == false){
+            io.textContent = "◯";
+            io.style.color = "black";
+            io.style.backgroundColor = "white";
+            io.flag = true;
+        }else{
+            io.textContent = "　";
+            io.style.color = "white";
+            io.style.backgroundColor = "gray";
+            io.flag = false;
+        }
+
+    }
 
     //小要素を親要素に追加
     ioWrapper.appendChild(io);
@@ -136,11 +152,12 @@ function Createio(parentId) {
         ダイス 
 ***************************************************/
 //diceMax面のダイスを振る
-var PlayDice = function(diceMax){ 
+const PlayDice = function(diceMax){ 
     return Math.floor(Math.random() * diceMax + 1);
 }
 
-var DiceEx = function(diceCount,diceMax){
+//[diceMax]d[diceCount]のダイスを振る
+const  DiceEx = function(diceCount,diceMax){
     var diceArrey = [];
 
     count = 0;
@@ -155,13 +172,18 @@ var DiceEx = function(diceCount,diceMax){
     return diceArrey;
 }
 
-var sum = function(arr){
+const ArrSum = function(arr){
     var sum = 0;
     count = 0;
     while(count < arr.length){
         sum += arr[count];
         count++;
     }
+    return sum;
+}
+
+const Arrsum = function(arr){
+    var sum = arr.reduce((a, b) => a + b);
     return sum;
 }
 
